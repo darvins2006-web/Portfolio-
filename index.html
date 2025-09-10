@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartEdge — Intelligent Edge Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <h1>SmartEdge</h1>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#devices">Devices</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" aria-pressed="false">Toggle Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h2>Intelligent edge management for modern IoT</h2>
+        <p>Deploy logic at the edge, get real-time insights, and reduce latency.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#dashboard">Open Dashboard</a>
+          <a class="btn outline" href="#features">Explore Features</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-top">
+          <div class="metric">
+            <div class="label">Active Devices</div>
+            <div id="activeDevices" class="value">0</div>
+          </div>
+          <div class="metric">
+            <div class="label">Avg Latency</div>
+            <div id="avgLatency" class="value">0 ms</div>
+          </div>
+        </div>
+        <canvas id="miniChart" width="400" height="160"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="container features">
+    <h3>Core Features</h3>
+    <div class="cards">
+      <article class="card"><h4>Local Processing</h4><p>Run inference and control logic on devices.</p></article>
+      <article class="card"><h4>Secure Connectivity</h4><p>Mutual TLS + hardware-backed keys.</p></article>
+      <article class="card"><h4>Real-time Insights</h4><p>Telemetry and analytics for immediate actions.</p></article>
+      <article class="card"><h4>Remote Orchestration</h4><p>Deploy policies and monitor fleet health.</p></article>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="container dashboard">
+    <h3>Live Dashboard</h3>
+    <div class="dashboard-grid">
+      <div class="panel">
+        <h4>Telemetry Stream</h4>
+        <div id="telemetryLog" class="telemetry"></div>
+        <div class="controls">
+          <button id="startStream" class="btn">Start Stream</button>
+          <button id="stopStream" class="btn outline">Stop</button>
+          <button id="clearLog" class="btn ghost">Clear</button>
+        </div>
+      </div>
+
+      <div class="panel small">
+        <h4>Device Status</h4>
+        <table id="devicesTable">
+          <thead><tr><th>ID</th><th>Name</th><th>Status</th><th>Last Seen</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h4>Edge Rules</h4>
+        <form id="ruleForm" class="rule-form">
+          <label>Rule name<input type="text" id="ruleName" placeholder="e.g. Temp threshold"></label>
+          <label>Condition<select id="ruleCondition">
+            <option value=">">&gt;</option>
+            <option value="<">&lt;</option>
+            <option value="==">==</option>
+          </select></label>
+          <label>Value<input type="number" id="ruleValue" /></label>
+          <div class="form-actions"><button class="btn primary" type="submit">Save Rule</button></div>
+        </form>
+        <ul id="ruleList" class="rule-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devices -->
+  <section id="devices" class="container devices">
+    <h3>Devices</h3>
+    <p>Simulated device fleet for demo purposes.</p>
+    <div class="device-controls">
+      <button id="addDevice" class="btn">Add Device</button>
+      <button id="removeDevice" class="btn outline">Remove Device</button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="container footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Contact</h4>
+        <p>Email: hello@smartedge.example</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Subscribe</h4>
+        <form id="subscribeForm">
+          <input id="subEmail" type="email" placeholder="your email" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="copyright">© SmartEdge 2025</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
