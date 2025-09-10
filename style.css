@@ -1,0 +1,58 @@
+:root {
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0066ff;
+  --text:#0f172a;
+  --glass: rgba(255,255,255,0.6);
+}
+
+[data-theme="dark"] {
+  --bg:#071025;
+  --card:#0b1b2b;
+  --muted:#9aa7bd;
+  --accent:#3aa0ff;
+  --text:#e6eef9;
+  --glass: rgba(10,20,30,0.5);
+}
+
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial, sans-serif; background:var(--bg); color:var(--text); }
+.container { max-width:1100px; margin:0 auto; padding:24px; }
+
+.topbar { position:sticky; top:0; background:var(--glass); backdrop-filter:blur(6px); }
+.topbar .nav { display:flex; justify-content:space-between; align-items:center; }
+nav a { margin:0 10px; color:var(--muted); text-decoration:none; }
+nav button { margin-left:12px; }
+
+.hero { padding:48px 0; }
+.hero-grid { display:grid; grid-template-columns:1fr 420px; gap:24px; align-items:center; }
+.hero-text h2 { font-size:32px; margin:0 0 12px; }
+.hero-text p { margin:0 0 16px; color:var(--muted); }
+
+.btn { padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:600; border:1px solid transparent; }
+.btn.primary { background:var(--accent); color:white; }
+.btn.outline { border:1px solid var(--accent); color:var(--accent); background:transparent; }
+.btn.ghost { background:transparent; color:var(--muted); }
+
+.hero-panel { background:var(--card); padding:16px; border-radius:12px; }
+.metric .label { font-size:12px; color:var(--muted); }
+.metric .value { font-size:20px; font-weight:700; }
+
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.card { background:var(--card); padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.04); }
+
+.dashboard-grid { display:grid; grid-template-columns:2fr 1fr; gap:16px; }
+.panel { background:var(--card); padding:16px; border-radius:12px; }
+.telemetry { height:220px; overflow:auto; background:var(--glass); padding:10px; border-radius:8px; }
+.controls { margin-top:10px; display:flex; gap:8px; }
+
+table { width:100%; border-collapse:collapse; }
+th, td { padding:8px; border-bottom:1px solid rgba(0,0,0,0.06); }
+
+.rule-form label { display:block; margin:8px 0; }
+.rule-list { list-style:none; padding:0; }
+.rule-list li { background:var(--glass); padding:8px; border-radius:6px; margin-bottom:6px; }
+
+.footer { padding:24px 0; }
+.footer-grid { display:flex; justify-content:space-between; }
